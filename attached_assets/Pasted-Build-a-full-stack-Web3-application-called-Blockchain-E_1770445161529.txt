@@ -1,0 +1,54 @@
+Build a full-stack Web3 application called Blockchain Evidence Notary.
+
+Purpose:
+	•	Provide tamper-evident registration and verification of digital evidence using blockchain immutability.
+	•	The system must support forensic principles: integrity, timestamping, and non-repudiation.
+
+Architecture:
+	•	Frontend: Web2-style UI (HTML/CSS/JavaScript or minimal React).
+	•	Backend logic: Ethereum-compatible smart contract written in Solidity.
+	•	Blockchain interaction: ethers.js.
+	•	Deployment target: public EVM testnet (Sepolia or equivalent).
+
+Smart Contract Requirements (Solidity):
+	•	Implement a contract that allows registering evidence hashes.
+	•	Each evidence record must store:
+	•	bytes32 evidenceHash
+	•	address submitter
+	•	uint256 blockTimestamp
+	•	Prevent duplicate evidence hash registration.
+	•	Emit an event on successful registration.
+	•	Provide a public read function to verify whether a hash exists and return its metadata.
+	•	No deletion or modification of records is allowed.
+
+Frontend Requirements:
+	•	Allow users to:
+	•	Upload a file or paste raw text.
+	•	Compute SHA-256 hash locally in the browser.
+	•	Connect an Ethereum wallet (MetaMask).
+	•	Submit the hash to the smart contract.
+	•	Verify an existing hash without submitting a transaction.
+	•	Display:
+	•	Transaction hash after submission.
+	•	Block timestamp and submitter address on verification.
+
+Security & Forensics Constraints:
+	•	Do NOT upload raw evidence to the blockchain.
+	•	Hashing must be done client-side.
+	•	The app must be read-only except for explicit user-signed transactions.
+	•	No private keys stored anywhere.
+
+Code Quality:
+	•	Use clean, modular structure.
+	•	Comment Solidity code explaining forensic relevance of each component.
+	•	Handle errors (duplicate hash, rejected tx, invalid input) gracefully.
+
+Output:
+	•	Provide:
+	•	Solidity contract
+	•	Frontend code
+	•	Instructions to deploy the contract and connect it to the frontend
+
+This application is for educational and research purposes only and must not scrape, store, or transmit private data.
+
+⸻
