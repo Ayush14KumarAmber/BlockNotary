@@ -50,3 +50,9 @@ contract EvidenceNotary {
         return (true, e.submitter, e.blockTimestamp);
     }
 }
+**contract EvidenceNotary {
+  **  struct Evidence {
+  **      bytes32 evidenceHash;
+    **    address submitter;
+      **  uint256 blockTimestamp;
+   ** }
